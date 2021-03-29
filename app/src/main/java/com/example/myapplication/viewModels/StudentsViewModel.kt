@@ -35,6 +35,7 @@ class StudentsViewModel : ViewModel() {
 
         studentsRepository.load {
             this.students.value?.addAll(studentsRepository.results.value ?: return@load)
+            _isLoading.value = false
         }
     }
 
